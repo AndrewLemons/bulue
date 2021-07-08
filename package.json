@@ -2,6 +2,11 @@
 	"name": "bulue",
 	"version": "0.0.1",
 	"description": "Simple Bulma components for Vue 3.",
+	"author": {
+		"name": "Andrew Lemons",
+		"url": "https://github.com/AndrewLemons"
+	},
+	"private": false,
 	"main": "dist/bulue.js",
 	"module": "dist/bulue.es.js",
 	"scripts": {
@@ -10,6 +15,10 @@
 		"format": "prettier . --write"
 	},
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/AndrewLemons/bulue"
+	},
 	"devDependencies": {
 		"prettier": "^2.3.2",
 		"rollup": "^2.52.8",
