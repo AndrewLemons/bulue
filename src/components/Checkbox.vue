@@ -2,9 +2,7 @@
 	<div class="control">
 		<label class="checkbox">
 			<input type="checkbox" v-model="inputValue" :disabled="isDisabled" />
-			<label>
-				<slot />
-			</label>
+			{{ label }}
 		</label>
 	</div>
 </template>
@@ -18,6 +16,10 @@ export default {
 	props: {
 		modelValue: {
 			type: Boolean,
+		},
+		label: {
+			type: String,
+			default: "",
 		},
 		isDisabled: {
 			type: Boolean,
