@@ -9,6 +9,9 @@ Bulue provides simple Bulma components for Vue 3.
 ## Usage
 
 ```javascript
+import "bulma/css/bulma.css"; // Customized Bulma works too!
+import "bulue/dist/bulue.css";
+
 import Bulue from "bulue";
 myApp.use(Bulue);
 ```
