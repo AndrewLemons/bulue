@@ -6,18 +6,19 @@ export default {
 	input: "src/index.js",
 	output: [
 		{
-			format: "cjs",
+			format: "umd",
 			file: "dist/bulue.js",
 			name: "Bulue",
-			plugins: [terser()],
+			globals: {
+				vue: "Vue",
+			},
 		},
 		{
 			format: "esm",
 			file: "dist/bulue.es.js",
 			name: "Bulue",
-			plugins: [terser()],
 		},
 	],
 	external: ["vue"],
-	plugins: [vue(), css({ output: "bulue.css" })],
+	plugins: [vue(), css({ output: "bulue.css" }), terser()],
 };
