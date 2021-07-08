@@ -1,7 +1,7 @@
 <template>
 	<transition name="fade">
 		<div
-			v-if="isActive"
+			v-if="modelValue"
 			:class="['notification', colorClass, isLight ? 'is-light' : '']"
 		>
 			<button v-if="isClosable" class="delete" @click="close()"></button>
@@ -15,10 +15,10 @@ import { colorTools } from "../tools";
 
 export default {
 	name: "bulue-notification",
+	emits: ["update:modelValue"],
 	props: {
-		isActive: {
+		modelValue: {
 			type: Boolean,
-			default: true,
 		},
 		color: {
 			type: String,
@@ -35,6 +35,11 @@ export default {
 	},
 	computed: {
 		...colorTools,
+	},
+	methods: {
+		close() {
+			this.$emit("update:modelValue", false);
+		},
 	},
 };
 </script>
