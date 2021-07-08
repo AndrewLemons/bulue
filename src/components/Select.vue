@@ -26,7 +26,11 @@ import { colorTools } from "../tools";
 
 export default {
 	name: "bulue-select",
+	emits: ["update:modelValue"],
 	props: {
+		modelValue: {
+			type: String,
+		},
 		color: {
 			type: String,
 			default: "",
@@ -50,10 +54,6 @@ export default {
 			type: Boolean,
 			default: false,
 		},
-		value: {
-			type: String,
-			default: "",
-		},
 	},
 	data() {
 		return {
@@ -61,19 +61,16 @@ export default {
 		};
 	},
 	watch: {
-		value(newValue) {
+		modelValue(newValue) {
 			this.inputValue = newValue;
 		},
 		inputValue(newValue) {
-			if (newValue == this.value) return;
-			this.$emit("update:value", newValue);
+			if (newValue == this.modelValue) return;
+			this.$emit("update:modelValue", newValue);
 		},
 	},
 	computed: {
 		...colorTools,
-	},
-	mounted() {
-		this.inputValue = this.value;
 	},
 };
 </script>

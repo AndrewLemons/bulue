@@ -14,10 +14,10 @@ import { colorTools } from "../tools";
 
 export default {
 	name: "bulue-checkbox",
+	emits: ["update:modelValue"],
 	props: {
-		value: {
+		modelValue: {
 			type: Boolean,
-			default: false,
 		},
 		isDisabled: {
 			type: Boolean,
@@ -30,19 +30,16 @@ export default {
 		};
 	},
 	watch: {
-		value(newValue) {
+		modelValue(newValue) {
 			this.inputValue = newValue;
 		},
 		inputValue(newValue) {
-			if (newValue == this.value) return;
-			this.$emit("update:value", newValue);
+			if (newValue == this.modelValue) return;
+			this.$emit("update:modelValue", newValue);
 		},
 	},
 	computed: {
 		...colorTools,
-	},
-	mounted() {
-		this.inputValue = this.value;
 	},
 };
 </script>
