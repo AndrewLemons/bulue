@@ -10,11 +10,19 @@
 </template>
 
 <script>
+import { colorTools } from "../tools";
+
 export default {
 	name: "bulue-checkbox",
 	props: {
-		value: Boolean,
-		isDisabled: Boolean,
+		value: {
+			type: Boolean,
+			default: false,
+		},
+		isDisabled: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -29,6 +37,9 @@ export default {
 			if (newValue == this.value) return;
 			this.$emit("update:value", newValue);
 		},
+	},
+	computed: {
+		...colorTools,
 	},
 	mounted() {
 		this.inputValue = this.value;

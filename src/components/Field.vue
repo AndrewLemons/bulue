@@ -10,19 +10,39 @@
 		>
 			<slot />
 		</div>
-		<p :class="['help', color ? `is-${color}` : '']">{{ message }}</p>
+		<p :class="['help', colorClass]">{{ message }}</p>
 	</div>
 </template>
 
 <script>
+import { colorTools } from "../tools";
+
 export default {
 	name: "bulue-field",
 	props: {
-		label: String,
-		message: String,
-		color: String,
-		isGrouped: Boolean,
-		hasAddons: Boolean,
+		label: {
+			type: String,
+			default: "",
+		},
+		message: {
+			type: String,
+			default: "",
+		},
+		color: {
+			type: String,
+			default: "",
+		},
+		isGrouped: {
+			type: Boolean,
+			default: false,
+		},
+		hasAddons: {
+			type: Boolean,
+			default: false,
+		},
+	},
+	computed: {
+		...colorTools,
 	},
 };
 </script>

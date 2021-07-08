@@ -3,7 +3,7 @@
 		<button
 			:class="[
 				'button',
-				currentColor ? `is-${currentColor}` : '',
+				colorClass,
 				`is-${size}`,
 				isLight ? 'is-light' : '',
 				isOutlined ? 'is-outlined' : '',
@@ -21,31 +21,54 @@
 </template>
 
 <script>
+import { colorTools } from "../tools";
+
 export default {
 	name: "bulue-button",
 	props: {
-		color: String,
-		size: String,
-		isLight: Boolean,
-		isOutlined: Boolean,
-		isInverted: Boolean,
-		isRounded: Boolean,
-		isLoading: Boolean,
-		isStatic: Boolean,
-		isDisabled: Boolean,
-		isFullWidth: Boolean,
+		color: {
+			type: String,
+			default: "",
+		},
+		size: {
+			type: String,
+			default: "normal",
+		},
+		isLight: {
+			type: Boolean,
+			default: false,
+		},
+		isOutlined: {
+			type: Boolean,
+			default: false,
+		},
+		isInverted: {
+			type: Boolean,
+			default: false,
+		},
+		isRounded: {
+			type: Boolean,
+			default: false,
+		},
+		isLoading: {
+			type: Boolean,
+			default: false,
+		},
+		isStatic: {
+			type: Boolean,
+			default: false,
+		},
+		isDisabled: {
+			type: Boolean,
+			default: false,
+		},
+		isFullWidth: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	computed: {
-		fieldColor() {
-			if (this.$parent?._?.type?.name === "bulue-field") {
-				return this.$parent.color;
-			}
-			return undefined;
-		},
-		currentColor() {
-			if (this.fieldColor) return this.fieldColor;
-			return this.color;
-		},
+		...colorTools,
 	},
 };
 </script>

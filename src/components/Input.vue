@@ -3,7 +3,7 @@
 		<input
 			:class="[
 				'input',
-				currentColor ? `is-${currentColor}` : '',
+				colorClass,
 				`is-${size}`,
 				isRounded ? 'is-rounded' : '',
 				isLoading ? 'is-loading' : '',
@@ -17,17 +17,43 @@
 </template>
 
 <script>
+import { colorTools } from "../tools";
+
 export default {
 	name: "bulue-input",
 	props: {
-		value: String,
-		color: String,
-		size: String,
-		type: String,
-		isRounded: Boolean,
-		isLoading: Boolean,
-		isReadonly: Boolean,
-		placeholder: String,
+		value: {
+			type: String,
+			default: "",
+		},
+		color: {
+			type: String,
+			default: "",
+		},
+		size: {
+			type: String,
+			default: "normal",
+		},
+		type: {
+			type: String,
+			default: "",
+		},
+		isRounded: {
+			type: Boolean,
+			default: false,
+		},
+		isLoading: {
+			type: Boolean,
+			default: false,
+		},
+		isReadonly: {
+			type: Boolean,
+			default: false,
+		},
+		placeholder: {
+			type: String,
+			default: "",
+		},
 	},
 	data() {
 		return {
@@ -44,16 +70,7 @@ export default {
 		},
 	},
 	computed: {
-		fieldColor() {
-			if (this.$parent?._?.type?.name === "bulue-field") {
-				return this.$parent.color;
-			}
-			return undefined;
-		},
-		currentColor() {
-			if (this.fieldColor) return this.fieldColor;
-			return this.color;
-		},
+		...colorTools,
 	},
 	mounted() {
 		this.inputValue = this.value;

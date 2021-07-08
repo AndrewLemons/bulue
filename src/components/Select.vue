@@ -3,7 +3,7 @@
 		<div
 			:class="[
 				'select',
-				currentColor ? `is-${currentColor}` : '',
+				colorClass,
 				`is-${size}`,
 				isMultiple ? 'is-multiple' : '',
 				isRounded ? 'is-rounded' : '',
@@ -22,16 +22,38 @@
 </template>
 
 <script>
+import { colorTools } from "../tools";
+
 export default {
 	name: "bulue-select",
 	props: {
-		color: String,
-		size: String,
-		isMultiple: Boolean,
-		display: Number,
-		isRounded: Boolean,
-		isLoading: Boolean,
-		value: String,
+		color: {
+			type: String,
+			default: "",
+		},
+		size: {
+			type: String,
+			default: "normal",
+		},
+		isMultiple: {
+			type: Boolean,
+			default: false,
+		},
+		display: {
+			type: Number,
+		},
+		isRounded: {
+			type: Boolean,
+			default: false,
+		},
+		isLoading: {
+			type: Boolean,
+			default: false,
+		},
+		value: {
+			type: String,
+			default: "",
+		},
 	},
 	data() {
 		return {
@@ -48,16 +70,7 @@ export default {
 		},
 	},
 	computed: {
-		fieldColor() {
-			if (this.$parent?._?.type?.name === "bulue-field") {
-				return this.$parent.color;
-			}
-			return undefined;
-		},
-		currentColor() {
-			if (this.fieldColor) return this.fieldColor;
-			return this.color;
-		},
+		...colorTools,
 	},
 	mounted() {
 		this.inputValue = this.value;
