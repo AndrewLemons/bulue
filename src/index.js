@@ -5,6 +5,8 @@ import "./styles/bulue.css";
 import Button from "./components/Button.vue";
 import Notification from "./components/Notification.vue";
 import ProgressBar from "./components/ProgressBar.vue";
+import Navbar from "./components/Navbar.vue";
+import Modal from "./components/Modal.vue";
 
 // Forms
 import Field from "./components/Field.vue";
@@ -17,6 +19,8 @@ export default {
 		app.component("b-button", Button);
 		app.component("b-notification", Notification);
 		app.component("b-progress-bar", ProgressBar);
+		app.component("b-navbar", Navbar);
+		app.component("b-modal", Modal);
 
 		app.component("b-field", Field);
 		app.component("b-input", Input);
