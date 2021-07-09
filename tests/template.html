@@ -1,0 +1,32 @@
+<!-- This template is made to be opened as a file in the browser. -->
+<!-- When editing, copy this file's content over to a new file in the ./test directory. -->
+<!-- Because of .gitignore, the test will not be committed to the repo (this is on purpose!). -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@3.1.4/dist/vue.global.min.js"></script>
+		<script src="../dist/bulue.js"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+			rel="stylesheet"
+		/>
+		<link href="../dist/bulue.css" rel="stylesheet" />
+		<title>Bulue Test</title>
+	</head>
+	<body>
+		<div id="app">
+			<!-- App content here -->
+		</div>
+		<script>
+			let App = {
+				// App config here
+			};
+
+			Vue.createApp(App).use(Bulue).mount("#app");
+		</script>
+	</body>
+</html>

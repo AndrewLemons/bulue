@@ -1,8 +1,11 @@
 # Bulue
-dist/
+/dist
+
+/tests/*
+!/tests/template.html
 
 # Node
-node_modules/
+/node_modules
 
 # OS
 .DS_Store
