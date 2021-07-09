@@ -7,6 +7,7 @@ import Notification from "./components/Notification.vue";
 import ProgressBar from "./components/ProgressBar.vue";
 import Navbar from "./components/Navbar.vue";
 import Modal from "./components/Modal.vue";
+import Loading from "./components/Loading.vue";
 
 // Forms
 import Field from "./components/Field.vue";
@@ -21,6 +22,7 @@ export default {
 		app.component("b-progress-bar", ProgressBar);
 		app.component("b-navbar", Navbar);
 		app.component("b-modal", Modal);
+		app.component("b-loading", Loading);
 
 		app.component("b-field", Field);
 		app.component("b-input", Input);
