@@ -5,15 +5,15 @@
 				'select',
 				colorClass,
 				`is-${size}`,
-				isMultiple ? 'is-multiple' : '',
-				isRounded ? 'is-rounded' : '',
-				isLoading ? 'is-loading' : '',
+				multiple ? 'is-multiple' : '',
+				rounded ? 'is-rounded' : '',
+				loading ? 'is-loading' : '',
 			]"
 		>
 			<select
 				v-model="inputValue"
-				:multiple="isMultiple"
-				:size="isMultiple ? display : undefined"
+				:multiple="multiple"
+				:size="multiple ? display : undefined"
 			>
 				<slot />
 			</select>
@@ -39,18 +39,18 @@ export default {
 			type: String,
 			default: "normal",
 		},
-		isMultiple: {
+		multiple: {
 			type: Boolean,
 			default: false,
 		},
 		display: {
 			type: Number,
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			default: false,
 		},
-		isLoading: {
+		loading: {
 			type: Boolean,
 			default: false,
 		},

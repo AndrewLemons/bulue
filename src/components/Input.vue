@@ -5,11 +5,11 @@
 				'input',
 				colorClass,
 				`is-${size}`,
-				isRounded ? 'is-rounded' : '',
-				isLoading ? 'is-loading' : '',
+				rounded ? 'is-rounded' : '',
+				loading ? 'is-loading' : '',
 			]"
 			:type="type"
-			:readonly="isReadonly"
+			:readonly="readonly"
 			:placeholder="placeholder"
 			v-model="inputValue"
 		/>
@@ -38,15 +38,15 @@ export default {
 			type: String,
 			default: "",
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			default: false,
 		},
-		isLoading: {
+		loading: {
 			type: Boolean,
 			default: false,
 		},
-		isReadonly: {
+		readonly: {
 			type: Boolean,
 			default: false,
 		},

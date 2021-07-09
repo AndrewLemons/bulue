@@ -1,7 +1,7 @@
 <template>
 	<progress
 		:class="['progress', colorClass, `is-${size}`]"
-		:value="isIndeterminate ? '' : value"
+		:value="indeterminate ? '' : value"
 		:max="max"
 	/>
 </template>
@@ -28,7 +28,7 @@ export default {
 			type: String,
 			default: "normal",
 		},
-		isIndeterminate: {
+		indeterminate: {
 			type: Boolean,
 			default: false,
 		},

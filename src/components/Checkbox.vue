@@ -1,7 +1,7 @@
 <template>
 	<div class="control">
-		<label class="checkbox">
-			<input type="checkbox" v-model="inputValue" :disabled="isDisabled" />
+		<label class="checkbox" :disabled="disabled">
+			<input type="checkbox" v-model="inputValue" :disabled="disabled" />
 			{{ label }}
 		</label>
 	</div>
@@ -21,7 +21,7 @@ export default {
 			type: String,
 			default: "",
 		},
-		isDisabled: {
+		disabled: {
 			type: Boolean,
 			default: false,
 		},

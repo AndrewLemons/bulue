@@ -4,8 +4,8 @@
 		<div
 			:class="[
 				'field',
-				isGrouped ? 'is-grouped' : '',
-				hasAddons ? 'has-addons' : '',
+				grouped ? 'is-grouped' : '',
+				addons ? 'has-addons' : '',
 			]"
 		>
 			<slot />
@@ -32,11 +32,11 @@ export default {
 			type: String,
 			default: "",
 		},
-		isGrouped: {
+		grouped: {
 			type: Boolean,
 			default: false,
 		},
-		hasAddons: {
+		addons: {
 			type: Boolean,
 			default: false,
 		},

@@ -5,15 +5,15 @@
 				'button',
 				colorClass,
 				`is-${size}`,
-				isLight ? 'is-light' : '',
-				isOutlined ? 'is-outlined' : '',
-				isInverted ? 'is-inverted' : '',
-				isRounded ? 'is-rounded' : '',
-				isLoading ? 'is-loading' : '',
-				isStatic ? 'is-static' : '',
-				isFullWidth ? 'is-fullwidth' : '',
+				light ? 'is-light' : '',
+				outlined ? 'is-outlined' : '',
+				inverted ? 'is-inverted' : '',
+				rounded ? 'is-rounded' : '',
+				loading ? 'is-loading' : '',
+				this.static ? 'is-static' : '',
+				fullwidth ? 'is-fullwidth' : '',
 			]"
-			:disabled="isDisabled"
+			:disabled="disabled"
 		>
 			<slot />
 		</button>
@@ -34,35 +34,35 @@ export default {
 			type: String,
 			default: "normal",
 		},
-		isLight: {
+		light: {
 			type: Boolean,
 			default: false,
 		},
-		isOutlined: {
+		outlined: {
 			type: Boolean,
 			default: false,
 		},
-		isInverted: {
+		inverted: {
 			type: Boolean,
 			default: false,
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			default: false,
 		},
-		isLoading: {
+		loading: {
 			type: Boolean,
 			default: false,
 		},
-		isStatic: {
+		static: {
 			type: Boolean,
 			default: false,
 		},
-		isDisabled: {
+		disabled: {
 			type: Boolean,
 			default: false,
 		},
-		isFullWidth: {
+		fullwidth: {
 			type: Boolean,
 			default: false,
 		},

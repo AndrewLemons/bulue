@@ -2,9 +2,9 @@
 	<transition name="fade">
 		<div
 			v-if="modelValue"
-			:class="['notification', colorClass, isLight ? 'is-light' : '']"
+			:class="['notification', colorClass, light ? 'is-light' : '']"
 		>
-			<button v-if="isClosable" class="delete" @click="close()"></button>
+			<button v-if="closable" class="delete" @click="close()"></button>
 			<slot />
 		</div>
 	</transition>
@@ -24,11 +24,11 @@ export default {
 			type: String,
 			default: "",
 		},
-		isLight: {
+		light: {
 			type: Boolean,
 			default: false,
 		},
-		isClosable: {
+		closable: {
 			type: Boolean,
 			default: true,
 		},
