@@ -2,7 +2,10 @@
 	<transition name="fade">
 		<div :class="['modal', modelValue ? 'is-active' : '']" v-if="modelValue">
 			<div class="modal-background"></div>
-			<div class="modal-card" v-if="$slots.header || $slots.footer">
+			<div
+				class="modal-card"
+				v-if="$slots.header || $slots.footer || $slots.body"
+			>
 				<header class="modal-card-head">
 					<slot name="header" />
 				</header>
