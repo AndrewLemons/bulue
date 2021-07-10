@@ -1,5 +1,13 @@
 # Bulue Changelog
 
+# v0.0.5
+
+Version v0.0.4 was published incorrectly. Because of this, it had to be removed from NPM. Oops! Anyways, v0.0.5 Fixes a minor issue and is essentially v0.0.4.
+
+Changes:
+
+- Fix Modal card mode conditions.
+
 ## v0.0.4
 
 Changes:
