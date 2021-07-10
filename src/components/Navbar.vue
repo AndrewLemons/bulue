@@ -22,7 +22,7 @@
 
 		<div :class="['navbar-menu', state ? 'is-active' : '']">
 			<div class="navbar-start">
-				<slot />
+				<slot name="start" />
 			</div>
 
 			<div class="navbar-end">
