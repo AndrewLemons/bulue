@@ -1,5 +1,12 @@
 # Bulue Changelog
 
+## v0.0.4
+
+Changes:
+
+- Renamed Modal and Navbar slots.
+- Fixed button groups.
+
 ## v0.0.3
 
 This version includes prop renames which will be breaking. Expect any and all future releases below v1.0.0 to be breaking while the base is being built.
