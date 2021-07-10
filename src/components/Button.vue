@@ -1,5 +1,26 @@
 <template>
-	<div class="control">
+	<template v-if="isFieldChild">
+		<div class="control">
+			<button
+				:class="[
+					'button',
+					colorClass,
+					`is-${size}`,
+					light ? 'is-light' : '',
+					outlined ? 'is-outlined' : '',
+					inverted ? 'is-inverted' : '',
+					rounded ? 'is-rounded' : '',
+					loading ? 'is-loading' : '',
+					this.static ? 'is-static' : '',
+					fullwidth ? 'is-fullwidth' : '',
+				]"
+				:disabled="disabled"
+			>
+				<slot />
+			</button>
+		</div>
+	</template>
+	<template v-else>
 		<button
 			:class="[
 				'button',
@@ -17,7 +38,7 @@
 		>
 			<slot />
 		</button>
-	</div>
+	</template>
 </template>
 
 <script>
@@ -69,6 +90,9 @@ export default {
 	},
 	computed: {
 		...colorTools,
+		isFieldChild() {
+			return this.$parent.$options.name === "bulue-field";
+		},
 	},
 };
 </script>
