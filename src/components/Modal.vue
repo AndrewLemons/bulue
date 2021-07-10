@@ -7,7 +7,7 @@
 					<slot name="header" />
 				</header>
 				<section class="modal-card-body">
-					<slot />
+					<slot name="body" />
 				</section>
 				<footer class="modal-card-foot">
 					<slot name="footer" />
